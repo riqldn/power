@@ -120,7 +120,7 @@ export default function Home() {
             <div className="about min-h-full w-full flex gap-8 flex-col md:flex-row md:justify-around ">
               <div>
                 <Image className="object-cover ruthven rounded-lg" alt="owner of transportation inc Ruthven Wallace" quality={80} sizes="50vw" src={Ruthven} />
-                <h3 className="text-sm text-center pt-3 md:pt-2">Owner - Ruthven Wallace.</h3>
+                <div className="text-sm text-center pt-3 md:pt-2">Owner - Ruthven Wallace.</div>
               </div>
 
               <p className="md:max-w-[45ch] text-[14px] font-normal md:leading-snug md:text-base">We believe that the highest level of luxury comprises the most personalized, thoughtful and seamless service. Our ability to consistently deliver on this promise derives from decades of experience and our steadfast commitment to our clients&apos; needs. We pride ourselves on our ability to always be one step ahead in understanding your needs
