@@ -16,7 +16,7 @@ export default function Footer() {
             <h3 className="text-white text-base">Forms</h3>
             <Link href=''>Terms & Conditions</Link>
             <Link href='' >Reservation Confirmation Form</Link>
-            <Link href='file:Authorization.pdf' target="_blank" >CC Authorization Form</Link>
+            <Link href='/Authorization.pdf' target="_blank" >CC Authorization Form</Link>
 
 
         </div>

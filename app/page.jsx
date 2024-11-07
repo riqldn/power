@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             {/* Hero Image */}
             <motion.div initial={{ filter: 'blur(4px)' }} whileInView={{ filter: 'blur(0px)' }} transition={{ delay: 1, duration: 0.5, ease: 'easeIn' }} className="imageContainer relative rounded-xl flex items-center justify-center">
-              <Image className="heroImage" priority src={HeroImage} fill alt="chaffeur opening a car door" quality={80} sizes="100vw" placeholder="blur" />
+              <Image className="heroImage" priority src={HeroImage} fill alt="chaffeur opening a car door" quality={80} sizes="90vw" placeholder="blur" />
             </motion.div>
           </div>
         </motion.section>
