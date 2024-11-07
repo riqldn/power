@@ -14,10 +14,9 @@ export default function Footer() {
         </div>
         <div className="footer-link md:col-start-5 lg:col-start-7 text-sm w-full gap-4 text-left flex flex-col text-white col-end-9">
             <h3 className="text-white text-base">Forms</h3>
-            <Link href=''>Terms & Conditions</Link>
-            <Link href='' >Reservation Confirmation Form</Link>
+            <Link href='https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/647dfca93d4e18db182b1047_Power%20Transportation%20Inc-53Tf8yPyuEIwClJS1sZwgPIJZY3olf.pdf'>Terms & Conditions</Link>
+            <Link href='https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/Power%20Reservation%20Confirmation%20Form-QTqEAW6uUlDG2NFSMPuD1ZNP6iHP2j.pdf' >Reservation Confirmation Form</Link>
             <Link href='https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/Authorization-iBlTkj7bT93y9aTyUop7bVwhN8VbR5.pdf' target="_blank" >CC Authorization Form</Link>
-
 
         </div>
         <div className="md:col-start-9 lg:col-start-10 text-sm w-full gap-4 text-left flex flex-col text-white col-end-13">
