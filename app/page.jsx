@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { motion, useAnimate, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import {motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import NavBar from "./components/NavBar";
 import Button from "./components/Button";
 import HeroImage from "./Assets/hero-image.jpg";
@@ -8,8 +8,7 @@ import { Header } from "./components/Header";
 import { useEffect, useRef } from "react";
 import Paragraph from "./components/Paragraph";
 import HeaderButton from "./components/HeaderButton";
-import Ruthven from "./Assets/ruthven.png"
-import Limousine from "./Assets/limo.png";
+import Ruthven from "./Assets/ruthven2.jpg"
 import CarCard from "./components/CarCard";
 import Sprinter from "./Assets/sprinter.png"
 import Sclass from "./Assets/s-class.png"
@@ -24,6 +23,7 @@ import World from "./Assets/SVG/world.svg"
 import Passenger from "./Assets/passenger.jpg"
 import Logo from "./Assets/SVG/power_logo1_whiteRed.svg"
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 
 
@@ -31,6 +31,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const spacer = useRef(null)
+  
   useEffect(() => {
     const right = document.querySelector(".arrowRight")
     const left = document.querySelector(".arrowLeft")
@@ -38,10 +39,9 @@ export default function Home() {
     const cardContainer = document.querySelector(".cards")
     var initial = 0;
     var amount = card.offsetWidth + 20
-    var totalLength = amount * 4;
+    var totalLength = amount * 3;
 
-
-
+   
     const leftClick = (e) => {
 
 
@@ -58,7 +58,6 @@ export default function Home() {
         left.classList.add("disable")
 
       right.classList.toggle("disable", initial === 0)
-      console.log(`amount ${amount * 4} initial ${initial}`)
     }
     const rightClick = (e) => {
 
@@ -74,8 +73,6 @@ export default function Home() {
       else if (initial === 0) {
         right.classList.add("disable")
       }
-
-      console.log(`amount ${amount * 4} initial ${initial}`)
     }
 
     left.addEventListener('click', leftClick)
@@ -102,7 +99,7 @@ export default function Home() {
 
               <div className=" flex-col flex gap-4 col-start-9 col-end-13">
                 <Paragraph classes="font-semibold text-wrap leading-tight max-w-[32ch] text-sm lg:text-base lg:leading-5  md:max-w-[35ch]" text="A concierge service suited to our clients every need. Passionately delivering to the highest standards while anticipating and facilitating our clients requests." />
-                <HeaderButton text="Inquire Now" />
+                <HeaderButton text="Inquire Now" linkTo="#contact" />
               </div>
             </div>
             {/* Hero Image */}
@@ -138,14 +135,13 @@ export default function Home() {
               <div className="flex mx-auto flex-col  gap-5  min-h-full  md:col-start-1 md:col-end-5">
                 <h2 className="text-4xl service-header md:text-6xl mb-3 font-bold">Our Fleet<span className="text-primary">.</span></h2>
                 <p className="mb-8 text-base md:text-md max-w-[28ch] md:max-w-[45ch] lg:max-w-[30ch] leading-snug font-semibold">Whether you&apos;re seeking a VIP experience, superior comfort, or the height of luxury, our fleet is equipped to meet your every need and exceed expectations.</p>
-                <Button text="Explore Our Rates" />
+                <Button text="Explore Our Rates" linkTo="https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/POWER%20TRANSPORTATION%20INC%20RATES-%2010.2024-xHUKnpgJ2lkosqpbbvcUEK5CHHYWKM.pdf" />
               </div>
 
 
               <div className="flex flex-cards md:pt-10 lg:pt-0 items-start w-[90vw] relative md:col-start-7 lg:col-start-6 md:max-w-[90vw]  md:col-end-12 flex-col">
                 <div className="flex cards relative flex-row gap-5 ">
                   <CarCard header='Luxury Sedan' image={Luxury} paragraph='When it comes to transportation, nothing compares to the opulence and sophistication of a luxury sedan.' />
-                  <CarCard header='Luxury Limousine' image={Limousine} paragraph='Luxury limousines offer an unparalleled level of privacy and exclusivity. Behind the tinted windows, you can enjoy your journey in complete seclusion.' />
                   <CarCard header='Sprinter' image={Sprinter} paragraph='Equipped with amenities such as entertainment systems, and charging  ensuring an enjoyable ride' />
                   <CarCard header='Mercedes S-Class' image={Sclass} paragraph='With uncompromising luxury, this flagship sedan offers a driving experience that surpasses all expectations.' />
                   <CarCard header='Executive SUV' image={Exec} paragraph='Selecting to travel in an SUV offers more than just luxurious seating and a VIP-like experience; it also prioritizes safety.' />
@@ -198,76 +194,21 @@ export default function Home() {
 
           <div className="difference-section w-11/12 min-h-[100vh] mx-auto flex-col lg:grid lg:gap-20 relative grid-cols-12 ">
 
-            <div className="w-full flex top-16 lg:sticky image h-fit col-start-1 col-end-7">
+            <motion.div className="w-full image-wrapper flex top-16 lg:sticky image h-fit col-start-1 col-end-7" initial={{clipPath: "inset(0 100% 0 0)"}} whileInView={{clipPath: "inset(0 0 0 0)"}} viewport={{once: true}} transition={{ duration:1.5, ease:'easeInOut'}}>
               <Image className="rounded-[20px] mx-auto  w-11/12 h-auto rounded-[20px]" alt="passenger riding in the back of the car working on their laptop" src={Passenger} />
-            </div>
+            </motion.div>
 
             <div className="flex flex-col md:items-center pt-10 col-start-7 col-end-13">
               <div className="flex flex-col min-h-[50vh] justify-center text-section">
-                <h2 className="text-2xl md:text-3xl mx-auto md:mx-0 md:max-w-fit max-w-[20ch] tracking-tight mb-8">Not <span className="relative inline-block">your average<span className="strike-through"></span></span> concierge service</h2>
+                <h2 className="text-2xl md:text-3xl mx-auto md:mx-0 md:max-w-fit max-w-[20ch] tracking-tight mb-8">Not <span className="relative inline-block">your average<motion.span className="strike-through" viewport={{once: true}} transition={{ duration:1.5, ease:'easeInOut'}} initial={{width:0}}whileInView={{width:'100%'}}></motion.span></span> concierge service</h2>
                 <p className="md:text-lg leading-[125%] max-w-[33ch] mx-auto md:max-w-[45ch] font-normal mb-10">We go beyond opening your doors and greeting you by name. Our drivers are trained to anticipate your personal needs by providing services that will allow you to spend more time on your important business or pressing matters.<br /><br></br>
                   Our concierge drivers anticipate your every need: whether it’s receiving flight information updates, providing tips about New York City or offering assistance in selecting trendy restaurants and hotels.</p>
                 {/* <Button text="Request a quote" /> */}
               </div>
 
 
-              <div className="contact-section left-0 lg:sticky px-2 md:px-0 lg:top-24 w-full lg:mt-80 md:min-h-[40vh] lg:min-h-[80vh]">
-                <form id="contact" className="flex flex-col gap-8">
-                  <div className="flex flex-col md:flex-row gap-6 justify-evenly w-full ">
-                    <label className="inline-block font-halenoir font-bold w-full md:w-1/2 grow-0 shrink-0" htmlFor="email">
-                      <div>Name</div>
-                      <input
-                        placeholder="Your name"
-                        className="outline outline-stroke rounded-md p-2 w-full md:w-11/12"
-                        id="first-name"
-                        type="text"
-                        required
-                      />
-
-                    </label>
-                    <label className="inline-block w-full md:w-1/2 grow-0 shrink-0" htmlFor="email">
-                      <div>Email</div>
-                      <input
-                        placeholder="example@outlook.com"
-                        className="outline outline-stroke rounded-md p-2 w-full md:w-11/12"
-                        id="email"
-                        type="email"
-                        required
-                      />
-                    </label>
-                  </div>
-
-                  <div>
-                    <label>
-                      <div>Phone</div>
-                      <input
-                        placeholder="+1 (123)-456-7890"
-                        className="outline outline-stroke rounded-md w-full p-2 "
-                        id="email"
-                        type="phone"
-                        required
-                      />
-                    </label>
-
-                  </div>
-
-                  <div>
-                    <label>
-                      <div>Message</div>
-                      <textarea
-                        placeholder="Message"
-                        rows="5"
-                        className="outline outline-stroke rounded-md w-full p-2 w- p-1 "
-                        id="email"
-                        type="email"
-                        required
-                      />
-                    </label>
-
-                  </div>
-                  <button className="btn w-fit rounded-md text-white">Submit</button>
-                </form>
-              </div>
+             <Contact/>
+           
             </div>
           </div>
         </section >

@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Arrow from '../Assets/SVG/arrow-right.svg'
-export default function Button({ text }) {
+export default function Button({ text, linkTo }) {
     return (
-        <motion.span initial="initial" whileHover="hovered" className='fullBtn relative'><Link href='' className="flex flex-row gap-0.5 items-center">
+        <motion.span initial="initial" whileHover="hovered" className='fullBtn relative'><Link href={linkTo} className="flex flex-row gap-0.5 items-center">
             <span className='btn cta relative text-white -z-10 rounded-md font-medium font-halenoir md:rounded-lg overflow-hidden'>
                 <motion.span className='absolute' variants={{ initial: { y: -30 }, hovered: { y: 0 }, transition: { ease: 'easeInOut', duration: 1 } }}>{text}</motion.span>
                 <motion.span variants={{ initial: { y: 0 }, hovered: { y: 30 }, transition: { ease: 'easeInOut', duration: 1 } }}>{text}</motion.span>

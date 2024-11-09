@@ -4,12 +4,12 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Arrow from '../Assets/SVG/arrow-right.svg'
-export default function HeaderButton({ text }) {
+export default function HeaderButton({ text, linkTo }) {
     
     return (
         <motion.div className='inline-block overflow-hidden relative'>
             <motion.span className="inline-block" initial={{ y:30, opacity: 0 }} whileInView={{ y: 0, opacity:1 }} viewport={{once:true}} transition={{delay:0.5, duration: 0.8, ease: 'easeInOut' }}>
-                <motion.span initial="initial" whileHover="hovered" className='fullBtn'><Link href='' className="flex flex-row gap-0.5 items-center">
+                <motion.span initial="initial" whileHover="hovered" className='fullBtn'><Link href={linkTo} className="flex flex-row gap-0.5 items-center">
                     <span className='btn cta relative text-white -z-10 rounded-md font-medium font-halenoir md:rounded-lg overflow-hidden'>
                         <motion.span className='absolute' variants={{ initial: { y: -30 }, hovered: { y: 0 }, transition: { ease: 'easeInOut', duration: 1 } }}>{text}</motion.span>
                         <motion.span variants={{ initial: { y: 0 }, hovered: { y: 30 }, transition: { ease: 'easeInOut', duration: 1 } }}>{text}</motion.span>

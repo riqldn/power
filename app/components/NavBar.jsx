@@ -2,6 +2,7 @@
 import Image
     from 'next/image'
 import Logo from '../Assets/SVG/power_logo1-blackRed.svg'
+import MobileLogo from '../Assets/SVG/power_logo1_whiteRed.svg'
 import Arrow from '../Assets/SVG/arrow-right.svg'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
@@ -13,21 +14,21 @@ export default function NavBar() {
     const linkVariant = {
         initial: { opacity: 0 }
     }
-  
+
     useEffect(() => {
         let previousScroll = window.scrollY
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
             const nav = document.querySelector('.nav')
-            if (currentScroll < previousScroll) {
+            if (window.innerWidth > 768 && currentScroll < previousScroll) {
                 nav.classList.add("showNav")
                 nav.classList.remove("hideNav")
             }
-            else if (currentScroll > previousScroll) {
+            else if (window.innerWidth > 768 && currentScroll > previousScroll) {
                 nav.classList.add("hideNav");
                 nav.classList.remove("showNav");
             }
-             previousScroll = window.scrollY
+            previousScroll = window.scrollY
         })
 
 
@@ -49,7 +50,7 @@ export default function NavBar() {
                         <motion.span variants={{ initial: { y: -30 }, hovered: { y: 0 }, transition: { ease: 'easeInOut', duration: 1 } }} className='inline-block absolute'>Fleet</motion.span>
                     </Link></motion.span>
 
-                    <motion.span initial="initial" whileHover="hovered"><Link href='' className='overflow-hidden relative flex'>
+                    <motion.span initial="initial" whileHover="hovered"><Link href='https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/POWER%20TRANSPORTATION%20INC%20RATES-%2010.2024-xHUKnpgJ2lkosqpbbvcUEK5CHHYWKM.pdf' className='overflow-hidden relative flex'>
                         <motion.span variants={{ initial: { y: 0 }, hovered: { y: 30 }, transition: { ease: 'easeInOut', duration: 1 } }} className='inline-block'>Rates</motion.span>
                         <motion.span variants={{ initial: { y: -30 }, hovered: { y: 0 }, transition: { ease: 'easeInOut', duration: 1 } }} className='inline-block absolute'>Rates</motion.span>
                     </Link></motion.span>
@@ -78,11 +79,22 @@ export default function NavBar() {
                 </div>
             </div >
             {/*Mobile Navigation*/}
-            <div ref={scope} className={ isActive ? 'mobile-menu z-40 active md:hidden' : 'mobile-menu z-40 md:hidden'}>
-                <motion.span onClick={()=>setToggle(!isActive)} variants={linkVariant} initial="initial"><Link href='/'>Home</Link></motion.span>
-                <motion.span variants={linkVariant} initial="initial"><Link href='#fleet'>Fleet</Link></motion.span>
-                <motion.span variants={linkVariant} initial="initial"><Link href=''>Rates</Link></motion.span>
-                <motion.span variants={linkVariant} initial="initial"><Link href='#contact'>Contact</Link></motion.span>
+            <div ref={scope} className={isActive ? 'mobile-menu z-40 active md:hidden' : 'mobile-menu z-40 md:hidden'}>
+                <motion.span onClick={() => setToggle(!isActive)} variants={linkVariant} initial="initial"><Link href='/'>Home</Link></motion.span>
+                <motion.span onClick={() => setToggle(!isActive)} variants={linkVariant} initial="initial"><Link href='#fleet'>Fleet</Link></motion.span>
+                <motion.span onClick={() => setToggle(!isActive)} variants={linkVariant} initial="initial"><Link href='https://bc1fbalfblo0rsrq.public.blob.vercel-storage.com/POWER%20TRANSPORTATION%20INC%20RATES-%2010.2024-xHUKnpgJ2lkosqpbbvcUEK5CHHYWKM.pdf'>Rates</Link></motion.span>
+                <motion.span onClick={() => setToggle(!isActive)} variants={linkVariant} initial="initial"><Link href='#contact'>Contact</Link></motion.span>
+
+                <div className="translate-y-36 text-sm w-full pt-8 gap-4 text-left flex flex-col text-white">
+                    <div className='h-[1px] w-[97%] translate-x-[-5px] mx-auto bg-white'></div>
+                    <Image src={MobileLogo} alt="power transportation logo" width={100} />
+                    <Link className="underline" href='mailto:sadeprithwie@powertransportation-inc.com'>sadeprithwie@powertransportation-inc.com</Link>
+                    <Link href='tel:+15163516067' >Office: +1 (516)-351-6067</Link>
+                    <Link href='tel:+15169247760' >Office: +1 (516)-924-7760</Link>
+
+
+                </div>
+                <div className=''><div></div></div>
             </div>
         </nav >
     )
