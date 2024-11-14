@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "./components/NavBar";
 const halenoir = localFont({
   src: [{
     path: './fonts/HalenoirCompact-Medium.otf',
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${halenoir.variable}`}
       >
+        <NavBar/>
         {children}
       </body>
     </html>

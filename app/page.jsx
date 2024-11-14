@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
-import {motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import NavBar from "./components/NavBar";
+import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import Button from "./components/Button";
 import HeroImage from "./Assets/hero-image.jpg";
 import { Header } from "./components/Header";
@@ -21,7 +20,6 @@ import Comfort from "./Assets/SVG/comfort.svg"
 import Time from "./Assets/SVG/time.svg"
 import World from "./Assets/SVG/world.svg"
 import Passenger from "./Assets/passenger.jpg"
-import Logo from "./Assets/SVG/power_logo1_whiteRed.svg"
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
@@ -31,7 +29,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   const spacer = useRef(null)
-  
+
   useEffect(() => {
     const right = document.querySelector(".arrowRight")
     const left = document.querySelector(".arrowLeft")
@@ -41,7 +39,7 @@ export default function Home() {
     var amount = card.offsetWidth + 20
     var totalLength = amount * 3;
 
-   
+
     const leftClick = (e) => {
 
 
@@ -85,7 +83,6 @@ export default function Home() {
   const scaleScroll = useTransform(scrollYProgress, [0.6, 1], [1, 0.8])
   return (
     <main>
-      <NavBar />
       <div>
 
 
@@ -116,7 +113,7 @@ export default function Home() {
             <h1 className="text-2xl leading-7 md:text-4xl mx-auto md:max-w-[30ch] pb-20 text-center">We provide exceptional service for exceptional people<span className="text-primary">.</span></h1>
             <div className="about min-h-full w-full flex gap-8 flex-col md:flex-row md:justify-around ">
               <div>
-                <Image className="object-cover ruthven rounded-lg" alt="owner of transportation inc Ruthven Wallace" quality={80} sizes="50vw" src={Ruthven} />
+                <Image className=" ruthven rounded-md" alt="owner of transportation inc Ruthven Wallace" quality={80} sizes="50vw" src={Ruthven} />
                 <div className="text-sm text-center pt-3 md:pt-2">Owner - Ruthven Wallace.</div>
               </div>
 
@@ -194,21 +191,21 @@ export default function Home() {
 
           <div className="difference-section w-11/12 min-h-[100vh] mx-auto flex-col lg:grid lg:gap-20 relative grid-cols-12 ">
 
-            <motion.div className="w-full image-wrapper flex top-16 lg:sticky image h-fit col-start-1 col-end-7" initial={{clipPath: "inset(0 100% 0 0)"}} whileInView={{clipPath: "inset(0 0 0 0)"}} viewport={{once: true}} transition={{ duration:1.5, ease:'easeInOut'}}>
+            <motion.div className="w-full image-wrapper flex top-16 lg:sticky image h-fit col-start-1 col-end-7" initial={{ clipPath: "inset(0 100% 0 0)" }} whileInView={{ clipPath: "inset(0 0 0 0)" }} viewport={{ once: true }} transition={{ duration: 1.5, ease: 'easeInOut' }}>
               <Image className="rounded-[20px] mx-auto  w-11/12 h-auto rounded-[20px]" alt="passenger riding in the back of the car working on their laptop" src={Passenger} />
             </motion.div>
 
             <div className="flex flex-col md:items-center pt-10 col-start-7 col-end-13">
               <div className="flex flex-col min-h-[50vh] justify-center text-section">
-                <h2 className="text-2xl md:text-3xl mx-auto md:mx-0 md:max-w-fit max-w-[20ch] tracking-tight mb-8">Not <span className="relative inline-block">your average<motion.span className="strike-through" viewport={{once: true}} transition={{ duration:1.5, ease:'easeInOut'}} initial={{width:0}}whileInView={{width:'100%'}}></motion.span></span> concierge service</h2>
+                <h2 className="text-2xl md:text-3xl mx-auto md:mx-0 md:max-w-fit max-w-[20ch] tracking-tight mb-8">Not <span className="relative inline-block">your average<motion.span className="strike-through" viewport={{ once: true }} transition={{ duration: 1.5, ease: 'easeInOut' }} initial={{ width: 0 }} whileInView={{ width: '100%' }}></motion.span></span> concierge service</h2>
                 <p className="md:text-lg leading-[125%] max-w-[33ch] mx-auto md:max-w-[45ch] font-normal mb-10">We go beyond opening your doors and greeting you by name. Our drivers are trained to anticipate your personal needs by providing services that will allow you to spend more time on your important business or pressing matters.<br /><br></br>
                   Our concierge drivers anticipate your every need: whether it’s receiving flight information updates, providing tips about New York City or offering assistance in selecting trendy restaurants and hotels.</p>
                 {/* <Button text="Request a quote" /> */}
               </div>
 
 
-             <Contact/>
-           
+              <Contact />
+
             </div>
           </div>
         </section >

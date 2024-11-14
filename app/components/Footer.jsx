@@ -6,10 +6,10 @@ import Image from "next/image"
 export default function Footer() {
   return (
     <div>
-        <div className="footer p-10 bg-secondary w-full min-h-[40vh] flex justify-between flex-col">
+        <div className="footer p-10 bg-black w-full min-h-[40vh] flex justify-between flex-col">
     <div className="w-11/12 h-full gap-8 flex flex-col md:grid grid-cols-12">
         <div className="col1 col-start-1 col-end-4">
-            <Image src={Logo} className="w-full h-auto" alt="white power transportation inc link" />
+            <Image src={Logo} className="w-5/12 md:w-8/12 h-auto" alt="white power transportation inc link" />
 
         </div>
         <div className="footer-link md:col-start-5 lg:col-start-7 text-sm w-full gap-4 text-left flex flex-col text-white col-end-9">

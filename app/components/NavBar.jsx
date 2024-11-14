@@ -35,7 +35,7 @@ export default function NavBar() {
     }, [])
     return (
 
-        <nav className='nav w-full fixed z-50 backdrop-blur-sm top-0 left-0 font-halenoir nav-bg'>
+        <motion.nav initial={{opacity:0, y:-1000}} animate={{opacity:1, y:0}} transition={{ duration:1.5, ease: 'backInOut'}}  className='nav w-full fixed z-50 backdrop-blur-sm top-0 left-0 font-halenoir nav-bg'>
             <div className="w-11/12 mx-auto flex justify-between flex-row py-4  md:py-4 ">
                 <Image alt='Power Transportation Inc Logo' src={Logo} quality={80} width={120} />
                 {/* Navbar for desktop */}
@@ -96,6 +96,6 @@ export default function NavBar() {
                 </div>
                 <div className=''><div></div></div>
             </div>
-        </nav >
+        </motion.nav >
     )
 }
