@@ -41,9 +41,10 @@ export default function Contact() {
             placeholder="Your name"
             name="name"
             className="outline outline-stroke rounded-md p-2 w-full md:w-11/12"
-            id="first-name"
+            id="name"
             type="text"
             required
+            autoComplete
           />
 
         </label>
@@ -56,12 +57,13 @@ export default function Contact() {
             id="email"
             type="email"
             required
+            autoComplete
           />
         </label>
       </div>
 
       <div>
-        <label>
+        <label htmlFor="phone">
           <div>Phone</div>
           <input
             name="phone"
@@ -70,13 +72,14 @@ export default function Contact() {
             id="phone"
             type="phone"
             required
+            autoComplete
           />
         </label>
       </div>
 
       <div>
-        <label>
-          <div>Message</div>
+        <label htmlFor='message'>
+          <div>Message</div>q
           <textarea
             placeholder="Message"
             rows="5"
