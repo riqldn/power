@@ -269,3 +269,6 @@ h1 {
 .spacer {
   margin-top: -100vh;
 }
+h4{
+  transition: 3s all ease;
+}
