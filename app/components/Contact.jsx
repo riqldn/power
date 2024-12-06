@@ -79,7 +79,7 @@ export default function Contact() {
 
       <div>
         <label htmlFor='message'>
-          <div>Message</div>q
+          <div>Message</div>
           <textarea
             placeholder="Message"
             rows="5"
